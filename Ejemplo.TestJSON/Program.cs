@@ -18,7 +18,9 @@ namespace Ejemplo.TestJSON
                 Apellidos = "Json 5",
                 Estado = 1
             };
-            GrabarCliente(c);
+            //  GrabarCliente(c);
+
+            MostrarClientes();
             Console.ReadLine();
 
         }
@@ -56,6 +58,35 @@ namespace Ejemplo.TestJSON
                     Console.WriteLine("Ha ocurrido un error en la aplicacion intente mas tarde.");
                 }
             }
+        }
+
+        private static void MostrarClientes()
+        {
+            using (var client = new HttpClient())
+            {
+                var task = Task.Run(
+                    async () =>
+                    {
+                        return await client.GetAsync(SERVICE_BASE_URL);
+                    }
+                    );
+                HttpResponseMessage message = task.Result;
+                if(message.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var task2 = Task<string>.Run(async () =>
+                    {
+                        return await message.Content.ReadAsStringAsync();
+                    });
+                    string resultStr = task2.Result;
+                    List<Cliente> clientes = JsonConvert.DeserializeObject<List<Cliente>>(resultStr);
+                    clientes.ForEach(x => Console.WriteLine(x.Nombre));
+                }
+
+                else
+                {
+                    Console.WriteLine("Error invocando al web Service");
+                }
+            };
         }
     }
 }
