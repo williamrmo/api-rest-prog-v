@@ -1,0 +1,7 @@
+D:\Codigo\Visual Studio\clase4\TestASMX\bin\Debug\TestASMX.exe.config
+D:\Codigo\Visual Studio\clase4\TestASMX\bin\Debug\TestASMX.exe
+D:\Codigo\Visual Studio\clase4\TestASMX\bin\Debug\TestASMX.pdb
+D:\Codigo\Visual Studio\clase4\TestASMX\obj\Debug\TestASMX.csprojAssemblyReference.cache
+D:\Codigo\Visual Studio\clase4\TestASMX\obj\Debug\TestASMX.csproj.CoreCompileInputs.cache
+D:\Codigo\Visual Studio\clase4\TestASMX\obj\Debug\TestASMX.exe
+D:\Codigo\Visual Studio\clase4\TestASMX\obj\Debug\TestASMX.pdb
